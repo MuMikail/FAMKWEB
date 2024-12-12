@@ -2,23 +2,23 @@
 // Cek apakah form dikirimkan
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Ambil data dari form
-    $name = htmlspecialchars($_POST['name']);
+    $nama_lengkap = htmlspecialchars($_POST['nama_lengkap']);
     $email = htmlspecialchars($_POST['email']);
-    $subject = htmlspecialchars($_POST['subject']);
-    $message = htmlspecialchars($_POST['message']);
+    $masalah = htmlspecialchars($_POST['masalah']);
+    $pesan = htmlspecialchars($_POST['pesan']);
 
     // Email tujuan (ganti dengan email Anda)
     $to = "FAMK.cyber@gmail.com";
 
     // Subject email
-    $email_subject = "Pesan Baru dari: $name";
+    $email_subject = "Pesan Baru dari: $nama_lengkap";
 
     // Isi pesan email
     $email_body = "Anda menerima pesan baru dari formulir kontak:\n\n";
-    $email_body .= "Nama: $name\n";
+    $email_body .= "Nama: $nama_lengkap\n";
     $email_body .= "Email: $email\n";
-    $email_body .= "Subjek: $subject\n";
-    $email_body .= "Pesan:\n$message\n";
+    $email_body .= "Subjek: $masalah\n";
+    $email_body .= "Pesan:\n$pesan\n";
 
     // Header untuk email
     $headers = "From: $email\n";
